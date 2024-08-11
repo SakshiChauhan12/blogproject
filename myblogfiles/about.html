@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+      }
+      h1 {
+        text-align: center;
+        margin: 20px 0;
+
+        font-family: "Grey Qo", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .student {
+        background: #fff;
+        margin: 20px 0;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .student h2 {
+        margin: 0;
+      }
+      .student p {
+        margin: 5px 0;
+      }
+      .student a {
+        color: #333;
+        text-decoration: none;
+      }
+      .student a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>About Us</h1>
+      <div id="student-container"></div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const students = [
+          {
+            fname: "John",
+            lname: "Doe",
+            bio: "A passionate coder.",
+            linkedIn: "http://linkedin.com",
+            github: "http://github.com",
+          },
+          {
+            fname: "Jane",
+            lname: "Smith",
+            bio: "A web development enthusiast.",
+            linkedIn: "http://linkedin.com/jane",
+            github: "http://github.com/jane",
+          },
+        ];
+
+        const studentContainer = document.getElementById("student-container");
+        if (students.length > 0) {
+          students.forEach((student) => {
+            const studentDiv = document.createElement("div");
+            studentDiv.className = "student";
+
+            const studentName = document.createElement("h2");
+            studentName.innerText = `${student.fname} ${student.lname}`;
+
+            const studentBio = document.createElement("p");
+            studentBio.innerText = student.bio;
+
+            const studentLinkedIn = document.createElement("p");
+            studentLinkedIn.innerHTML = `<a href="${student.linkedIn}">LinkedIn</a>`;
+
+            const studentGitHub = document.createElement("p");
+            studentGitHub.innerHTML = `<a href="${student.github}">GitHub</a>`;
+
+            studentDiv.appendChild(studentName);
+            studentDiv.appendChild(studentBio);
+            studentDiv.appendChild(studentLinkedIn);
+            studentDiv.appendChild(studentGitHub);
+
+            studentContainer.appendChild(studentDiv);
+          });
+        } else {
+          studentContainer.innerText = "No students found.";
+        }
+      });
+    </script>
+  </body>
+</html>

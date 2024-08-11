@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+   
+    
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+    
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .blog-post {
+        background: #fff;
+        margin: 20px 0;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .blog-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .blog-date {
+        color: #888;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .blog-content {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Blog Page</h1>
+        <div id="blog-container"></div>
+
+    </div>
+    <script>
+        // Array of blog objects
+const blogs = [
+    {
+        title: "Introduction to JavaScript",
+        date: "2024-08-01",
+        content: "JavaScript is a versatile programming language used for web development. It allows you to implement complex features on web pages."
+    },
+    {
+        title: "Understanding CSS Grid",
+        date: "2024-07-25",
+        content: "CSS Grid Layout is a two-dimensional layout system for the web. It allows you to create complex layouts with ease."
+    },
+    {
+        title: "Getting Started with HTML",
+        date: "2024-07-10",
+        content: "HTML is the standard markup language for creating web pages. It describes the structure of a web page."
+    }
+];
+
+// Function to render blogs dynamically
+function renderBlogs() {
+    const blogContainer = document.getElementById('blog-container');
+    
+    blogs.forEach(blog => {
+        // Create blog post element
+        const blogPost = document.createElement('div');
+        blogPost.className = 'blog-post';
+
+        // Create title element
+        const blogTitle = document.createElement('h2');
+        blogTitle.className = 'blog-title';
+        blogTitle.innerText = blog.title;
+
+        // Create date element
+        const blogDate = document.createElement('p');
+        blogDate.className = 'blog-date';
+        blogDate.innerText = `Published on: ${blog.date}`;
+
+        // Create content element
+        const blogContent = document.createElement('p');
+        blogContent.className = 'blog-content';
+        blogContent.innerText = blog.content;
+
+        // Append elements to blog post
+        blogPost.appendChild(blogTitle);
+        blogPost.appendChild(blogDate);
+        blogPost.appendChild(blogContent);
+
+        // Append blog post to blog container
+        blogContainer.appendChild(blogPost);
+    });
+}
+
+// Call the renderBlogs function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', renderBlogs);
+
+    </script>
+</body>
+</html>
+<!-- <body>
+    <div class="container">
+        <h1>Blog Page</h1>
+        <div id="blog-container"></div>
+    </div>
+    <script>
+        // Array of blog objects
+const blogs = [
+    {
+        title: "Introduction to JavaScript",
+        date: "2024-08-01",
+        content: "JavaScript is a versatile programming language used for web development. It allows you to implement complex features on web pages."
+    },
+    {
+        title: "Understanding CSS Grid",
+        date: "2024-07-25",
+        content: "CSS Grid Layout is a two-dimensional layout system for the web. It allows you to create complex layouts with ease."
+    },
+    {
+        title: "Getting Started with HTML",
+        date: "2024-07-10",
+        content: "HTML is the standard markup language for creating web pages. It describes the structure of a web page."
+    }
+];
+
+// Function to render blogs dynamically
+function renderBlogs() {
+    const blogContainer = document.getElementById('blog-container');
+    
+    blogs.forEach(blog => {
+        // Create blog post element
+        const blogPost = document.createElement('div');
+        blogPost.className = 'blog-post';
+
+        // Create title element
+        const blogTitle = document.createElement('h2');
+        blogTitle.className = 'blog-title';
+        blogTitle.innerText = blog.title;
+
+        // Create date element
+        const blogDate = document.createElement('p');
+        blogDate.className = 'blog-date';
+        blogDate.innerText = `Published on: ${blog.date}`;
+
+        // Create content element
+        const blogContent = document.createElement('p');
+        blogContent.className = 'blog-content';
+        blogContent.innerText = blog.content;
+
+        // Append elements to blog post
+        blogPost.appendChild(blogTitle);
+        blogPost.appendChild(blogDate);
+        blogPost.appendChild(blogContent);
+
+        // Append blog post to blog container
+        blogContainer.appendChild(blogPost);
+    });
+}
+
+// Call the renderBlogs function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', renderBlogs);
+
+    </script>
+</body> -->
+<!-- </html> -->
